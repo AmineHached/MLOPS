@@ -37,4 +37,3 @@ artifacts/
 
 # Conda/pip env files
 environment.yml
-requirements.txt
