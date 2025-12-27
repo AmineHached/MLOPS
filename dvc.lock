@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  add_data:
+    cmd: python generate.py
+    deps:
+    - path: generate.py
+      hash: md5
+      md5: f293ffc2322ddde8f5f3c191e89bc51e
+      size: 249
+    outs:
+    - path: data/iris_data.csv
+      hash: md5
+      md5: 743c9f03b776e468c517b941773fe713
+      size: 2621
+  push:
+    cmd: python -m dvc push
+    deps:
+    - path: data/iris_data.csv
+      hash: md5
+      md5: 743c9f03b776e468c517b941773fe713
+      size: 2621
