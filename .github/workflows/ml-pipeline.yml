@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - Khaldi
-
+      - amine
 jobs:
   ml-pipeline:
     runs-on: ubuntu-latest
