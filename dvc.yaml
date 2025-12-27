@@ -1,0 +1,16 @@
+stages:
+  add_data:
+    # Generate the dataset (or otherwise produce the CSV) and declare the CSV as the output.
+    # Using `python generate.py` ensures the stage produces `data/iris_data.csv` which
+    # DVC can track as an output.
+    cmd: python generate.py
+    deps:
+      - generate.py
+    outs:
+      - data/iris_data.csv
+  push:
+    # Push DVC-tracked data to the configured remote. This stage depends on the
+    # CSV output produced by the add_data stage.
+    cmd: python -m dvc push
+    deps:
+      - data/iris_data.csv

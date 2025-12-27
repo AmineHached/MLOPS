@@ -1,6 +1,7 @@
 from sklearn.datasets import load_iris
 import pandas as pd
 
+# Load iris dataset and save to CSV for testing CI/CD
 iris = load_iris(as_frame=True)
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 df.to_csv("data/iris_data.csv", index=False)
