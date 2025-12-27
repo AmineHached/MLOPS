@@ -1,0 +1,11 @@
+stages:
+  add_data:
+    cmd: python -m dvc add data/iris_data.csv
+    deps:
+      - data/iris_data.csv
+    outs:
+      - data/iris_data.csv.dvc
+  push:
+    cmd: python -m dvc push
+    deps:
+      - data/iris_data.csv.dvc
