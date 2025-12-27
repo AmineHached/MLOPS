@@ -27,7 +27,7 @@ def main(n_estimators: int, random_state: int):
         mlflow.log_param("random_state", random_state)
         mlflow.log_metric("accuracy", acc)
         mlflow.log_metric("precision", prec)
-        mlflow.sklearn.log_model(model, "model")
+        mlflow.sklearn.log_model(model, name="RandomForestModel")
 
         print(f"Accuracy: {acc:.4f}  Precision: {prec:.4f}")
 
